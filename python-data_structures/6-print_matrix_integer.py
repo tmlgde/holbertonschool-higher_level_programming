@@ -2,7 +2,10 @@
 
 def print_matrix_integer(matrix=[[]]):
     for ligne in matrix:
-        for number in ligne:
-            print("{:d} ".format(number), end="")
+        for i, nombre in enumerate(ligne):
+            if i == len(ligne) -1:
+                print("{:d}".format(nombre), end="")
+            else:
+                print("{:d}".format(nombre), end=" ")
         print()
 
