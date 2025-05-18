@@ -1,3 +1,4 @@
+!#/usr/bin/python3
 """Addition of two integers or floats
 
 This module provides a function add_integer(a, b=98) that returns the sum of a and b.
@@ -22,4 +23,3 @@ def add_integer(a, b=98):
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
     return int(a) + int(b)
-
