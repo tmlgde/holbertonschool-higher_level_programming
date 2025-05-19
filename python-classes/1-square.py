@@ -14,3 +14,12 @@ class Square:
     It is used as a foundation for further development.
     """
     pass
+
+def __init__(self, size):
+    """
+    Initialize a new Square instance.
+
+    Args:
+	size (int): The size of the square.
+    """
+    self.__size = size
