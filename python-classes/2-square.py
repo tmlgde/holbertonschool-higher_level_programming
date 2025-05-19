@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 """
-This module defines a Square class that represents a square geometry.
+This module defines a Square class with size validation.
 
-The Square class contains a private instance attribute to store the size 
-of the square. It does not perform any validation on the size value.
+The Square class has a private instance attribute for size and ensures 
+that the size is a positive integer.
 """
 
 class Square:
     """
-    Represents a square with a private size attribute.
+    Represents a square with size validation.
 
     Attributes:
         __size (int): The size of the square (private).
@@ -19,13 +19,14 @@ class Square:
         Initializes a new Square instance.
 
         Args:
-            size (int): The size of the square (no type/value validation).
+            size (int): The size of the square (default is 0).
         
-        The size attribute is private, which means it is intended to be 
-        accessed only within the class.
+        Raises:
+            TypeError: If size is not an integer.
+            ValueError: If size is less than 0.
         """
         if not isinstance(size, int):
-            raise TypeError("must be an integer")
+            raise TypeError("size must be an integer")
         if size < 0:
-            raise ValueError("must be >= 0")
+            raise ValueError("size must be >= 0")
         self.__size = size
