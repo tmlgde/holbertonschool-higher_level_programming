@@ -6,6 +6,7 @@ The Square class has a private instance attribute for size and ensures
 that the size is a positive integer.
 """
 
+
 class Square:
     """
     Represents a square with size validation.
@@ -20,7 +21,7 @@ class Square:
 
         Args:
             size (int): The size of the square (default is 0).
-        
+
         Raises:
             TypeError: If size is not an integer.
             ValueError: If size is less than 0.
