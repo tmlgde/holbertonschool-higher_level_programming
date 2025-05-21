@@ -6,6 +6,7 @@ class Square:
     """Represents a square."""
 
     def __init__(self, size=0):
+        """Initialize a square with a given size."""
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
@@ -29,10 +30,12 @@ class Square:
     def area(self):
         """Returns the current square area."""
         return self.__size ** 2
+
     def my_print(self):
         """Prints the square with the character #."""
         if self.__size == 0:
             print()
         else:
-            for i in range(self.__size):
+            for _ in range(self.__size):
                 print("#" * self.__size)
+
