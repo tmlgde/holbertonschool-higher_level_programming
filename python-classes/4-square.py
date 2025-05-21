@@ -1,13 +1,18 @@
 #!/usr/bin/python3
-"""Defines a Square with size property and area method."""
+"""Defines a class Square with size validation and accessors."""
 
 
 class Square:
     """Represents a square."""
 
     def __init__(self, size=0):
-        """Initialize the square with optional size."""
-        self.size = size
+        """
+        Initialize the square with an optional size.
+
+        Args:
+            size (int): Size of the square (default is 0).
+        """
+        self.size = size  # Appelle le setter automatiquement
 
     @property
     def size(self):
@@ -16,7 +21,16 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """Setter for size with validation."""
+        """
+        Setter for size with type and value validation.
+
+        Args:
+            value (int): New size value to assign.
+
+        Raises:
+            TypeError: If value is not an integer.
+            ValueError: If value is less than 0.
+        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -24,5 +38,5 @@ class Square:
         self.__size = value
 
     def area(self):
-        """Returns the current square area."""
+        """Returns the area of the square."""
         return self.__size ** 2
