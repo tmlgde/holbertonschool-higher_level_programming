@@ -12,7 +12,7 @@ class Rectangle:
 
     @property
     def width(self):
-        """Get the width."""
+        """Retrieve the width."""
         return self.__width
 
     @width.setter
@@ -26,7 +26,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get the height."""
+        """Retrieve the height."""
         return self.__height
 
     @height.setter
@@ -49,10 +49,8 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return the string representation of the rectangle with '#' characters."""
+        """Return the rectangle as a string of '#' characters."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        rect_lines = []
-        for _ in range(self.__height):
-            rect_lines.append("#" * self.__width)
+        rect_lines = ["#" * self.__width for _ in range(self.__height)]
         return "\n".join(rect_lines)
