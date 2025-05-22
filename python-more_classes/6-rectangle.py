@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class with area, perimeter, str, repr, and instance count."""
+"""Defines a Rectangle class with instance counting."""
 
 
 class Rectangle:
