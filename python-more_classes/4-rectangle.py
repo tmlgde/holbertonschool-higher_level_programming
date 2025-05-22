@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class with area, perimeter and string representation."""
+"""Defines a Rectangle class with area, perimeter, str and repr."""
 
 
 class Rectangle:
@@ -56,4 +56,5 @@ class Rectangle:
         return "\n".join(rect_lines)
 
     def __repr__(self):
+        """Return a string that can recreate the rectangle using eval()."""
         return f"Rectangle({self.__width}, {self.__height})"
