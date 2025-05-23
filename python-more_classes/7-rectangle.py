@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class with instance counting."""
+"""Defines a Rectangle class with symbol-based string representation."""
 
 
 class Rectangle:
@@ -53,11 +53,11 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return the rectangle as a string of '#' characters."""
+        """Return the rectangle as a string using print_symbol."""
         if self.__width == 0 or self.__height == 0:
             return ""
-        rect_lines = [str(self.print_symbol) * self.__width for _ in range(self.__height)]
-        return "\n".join(rect_lines)
+        line = str(self.print_symbol) * self.__width
+        return "\n".join([line for _ in range(self.__height)])
 
     def __repr__(self):
         """Return a string that can recreate the rectangle using eval()."""
