@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class with symbol-based string representation."""
+"""Defines a Rectangle class with comparison and symbol-based printing."""
 
 
 class Rectangle:
@@ -68,9 +68,9 @@ class Rectangle:
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
-        @staticmethod
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-    """Return the rectangle with the bigger area (or rect_1 if equal)."""
+        """Return the rectangle with the bigger area (or rect_1 if equal)."""
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
