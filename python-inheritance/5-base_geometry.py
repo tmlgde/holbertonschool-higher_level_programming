@@ -10,4 +10,3 @@ class BaseGeometry:
     Intended to be extended in future exercises.
     """
     pass
-
