@@ -3,6 +3,7 @@
 Simple OOP example using abstract base classes and duck typing.
 Defines Shape, Circle, Rectangle, and a utility function to print shape info.
 """
+
 from abc import ABC, abstractmethod
 import math
 
@@ -34,7 +35,7 @@ class Circle(Shape):
 
     def perimeter(self):
         """Return the perimeter (circumference) of the circle."""
-        return math.pi * self.radius * 2
+        return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
@@ -51,11 +52,11 @@ class Rectangle(Shape):
 
     def perimeter(self):
         """Return the perimeter of the rectangle."""
-        return (self.height + self.width) * 2
+        return 2 * (self.height + self.width)
 
 
-def shape_info(Shape):
+def shape_info(shape):
     """Print area and perimeter of any shape-like object."""
-    print(f"Area: {Shape.area()}")
-    print(f"Perimeter: {Shape.perimeter()}")
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
 
