@@ -58,3 +58,4 @@ def shape_info(Shape):
     """Print area and perimeter of any shape-like object."""
     print(f"Area: {Shape.area()}")
     print(f"Perimeter: {Shape.perimeter()}")
+
