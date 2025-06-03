@@ -1,16 +1,18 @@
 #!/usr/bin/python3
+"""
+Module 2-append_write
+
+Ce module contient une fonction qui ajoute une chaîne à la fin
+d’un fichier texte (UTF-8) et retourne le nombre de caractères ajoutés.
+"""
+
+
 def append_write(filename="", text=""):
     """
-    Appends a string at the end of a text file (UTF-8)
-    and returns the number of characters added.
+    Ajoute une chaîne à la fin d’un fichier texte (UTF-8).
 
-    Args:
-        filename (str): The name of the file to append to.
-        text (str): The text to write at the end of the file.
-
-    Returns:
-        int: Number of characters added.
+    Retourne :
+        Le nombre de caractères ajoutés.
     """
-    with open(filename, "a", encoding="utf-8") as file:
-        return file.write(text)
-
+    with open(filename, "a") as f:
+        return f.write(text)
