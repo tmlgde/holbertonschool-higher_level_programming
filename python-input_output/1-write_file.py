@@ -1,16 +1,19 @@
 #!/usr/bin/python3
+"""
+Écrit une chaîne de caractères dans un fichier texte (UTF-8).
+
+Retourne :
+    Le nombre de caractères écrits.
+"""
+
+
 def write_file(filename="", text=""):
     """
-    Writes a string to a text file (UTF-8) and returns
-    the number of characters written.
+    Lit un fichier texte (UTF-8) et affiche son contenu dans le terminal.
 
-    Args:
-        filename (str): Name of the file to write to.
-        text (str): Text content to write into the file.
-
-    Returns:
-        int: Number of characters written.
+    Argument :
+        filename : nom du fichier à lire.
     """
-    with open(filename, "w") as file:
-        return file.write(text)
 
+    with open(filename, "w", encoding="utf-8") as f:
+        return f.write(text)
