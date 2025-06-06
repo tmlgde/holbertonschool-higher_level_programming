@@ -1,28 +1,27 @@
 #!/usr/bin/python3
-"""Module defining the Student class."""
- 
+"""Create a class Student"""
+
 
 class Student:
-    """Represents a student."""
-
+    """Student class"""
     def __init__(self, first_name, last_name, age):
-        """Initialize a student."""
+        """Public instance"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        """Return a dictionary representation, filtered by attrs if provided."""
-        if type(attrs) is not list:
+        """Representation json of student class"""
+        if type(attrs) is list:
+            new_dict = {}
+            for key in self.__dict__:
+                for key2 in attrs:
+                    if key == key2:
+                        new_dict[key] = self.__dict__[key]
+            return new_dict
+        else:
             return self.__dict__
 
-        dic_vide = {}
-        for attr in attrs:
-            if hasattr(self, attr):
-                dic_vide[attr] = getattr(self, attr)
-        return dic_vide
-
-    
     def reload_from_json(self, json):
-        for key, value in json.items():
-            setattr(self, key, value)
+        """function that replace all attr"""
+        self.__dict__.update(json)
