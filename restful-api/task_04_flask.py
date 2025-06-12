@@ -3,6 +3,7 @@ from flask import jsonify
 from flask import request
 
 app = Flask(__name__)
+users ={}
 
 @app.route('/')
 def home():
@@ -26,7 +27,7 @@ def status():
 
 @app.route('/add_user', methods=["POST"])
 def add_user():
-    data = requests.json
+    data = request.get_json()
     users[data["username"]] = {
             "name": data["name"],
             "age": data["age"],
