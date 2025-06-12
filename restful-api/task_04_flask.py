@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import jsonify
-from flash import request
+from flask import request
 
 app = Flask(__name__)
 
@@ -26,6 +26,13 @@ def status():
 
 @app.route('/add_user', methods=["POST"])
 def add_user():
+    data = requests.json
+    users[data["username"]] = {
+            "name": data["name"],
+            "age": data["age"],
+            "city": data["city"]
+            }
+    return jsonify(data)
 
 if __name__ == "__main__":
     app.run()
