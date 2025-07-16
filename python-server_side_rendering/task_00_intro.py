@@ -32,10 +32,10 @@ def generate_invitations(template, attendees):
     # Traitement de chaque invité
     for index, attendee in enumerate(attendees, start=1):
         text = template
-        text = text.replace("{name}", attendee.get("name", "N/A"))
-        text = text.replace("{event_title}", attendee.get("event_title", "N/A"))
-        text = text.replace("{event_date}", attendee.get("event_date", "N/A"))
-        text = text.replace("{event_location}", attendee.get("event_location", "N/A"))
+        text = text.replace("{name}", str(attendee.get("name", "N/A")))
+        text = text.replace("{event_title}", str(attendee.get("event_title", "N/A")))
+        text = text.replace("{event_date}", str(attendee.get("event_date", "N/A")))
+        text = text.replace("{event_location}", str(attendee.get("event_location", "N/A")))
 
         filename = f"output_{index}.txt"
         with open(filename, "w") as file:
