@@ -7,8 +7,8 @@ app = Flask(__name__)
 @app.route('/products')
 def products():
     source = request.args.get("source")
-    
-    if source=json:
+
+    if source == "json":
         with open('products.json', "r") as file:
             data = json.load(file)
             return str(data)
@@ -16,6 +16,7 @@ def products():
         with open('products.csv', 'r') as file:
             reader = csv.DictReader(file)
             data = list(reader)
+            return str(data)
     else:
         return "Wrong Source"                
 
