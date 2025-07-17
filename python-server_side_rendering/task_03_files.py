@@ -11,14 +11,13 @@ def products():
     if source == "json":
         with open('products.json', "r") as file:
             data = json.load(file)
-            return str(data)
+
     elif source == "csv":
         with open('products.csv', 'r') as file:
             reader = csv.DictReader(file)
             data = list(reader)
-            return str(data)
-    else:
-        return "Wrong Source"                
 
-if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    else:
+        return render_template("product_display.html", error="Wrong Source")
+
+    return render_template("product_display.html", products=data)
