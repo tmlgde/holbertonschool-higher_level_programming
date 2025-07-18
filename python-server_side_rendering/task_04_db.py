@@ -22,9 +22,12 @@ def products():
             data = list(reader)
 
     elif source == 'sql':
-        products = read_products_from_sql()
+        products = from_sql()
         if products is None:
-            return render_template('products_display.html', error="Database error", products=[])
+            return render_template('product_display.html', error="Database error", products=[])
+        else:
+            data = products
+    
 
     else:
         return render_template("product_display.html", error="Wrong source")
